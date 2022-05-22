@@ -7,14 +7,15 @@ import WordsBagHelper
 def regex_helper(text: list) -> str:
     x = []
     for word in text:
-        if len(word) >= 3:
-            word = RegexHelper.remove_emoticons(word)
-            word = RegexHelper.remove_numbers(word)
-            word = RegexHelper.text_to_lower(word)
-            word = RegexHelper.remove_single_apostrophes(word)
-            word = RegexHelper.remove_double_apostrophes(word)
-            word = RegexHelper.remove_whitespaces(word)
-            word = RegexHelper.remove_punctuation(word)
+        word = RegexHelper.remove_emoticons(word)
+        word = RegexHelper.remove_numbers(word)
+        word = RegexHelper.text_to_lower(word)
+        word = RegexHelper.remove_single_apostrophes(word)
+        word = RegexHelper.remove_double_apostrophes(word)
+        word = RegexHelper.remove_whitespaces(word)
+        word = RegexHelper.remove_punctuation(word)
+        word = word.replace(' ', '')
+        if len(word) > 3:
             x.append(word)
     return x
 

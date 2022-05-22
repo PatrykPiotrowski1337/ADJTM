@@ -8,7 +8,7 @@ file = CsvReader.read_csv("spam.csv")
 
 def visual() -> None:
     text = ""
-    for i in range(len(file['v2']))[:400]:
+    for i in range(len(file['v2']))[:50]:
         text += file['v2'].iloc[i]
         text_wordcloud = prepared_text(text)
         bow = words_bag_helper(text_wordcloud)
